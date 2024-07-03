@@ -24,7 +24,7 @@ public class Main {
             System.out.println("Invalid Response");
             System.exit(0);
         }
-        //shiv
+        //Shiv Vinodshankar
         ListNode current = null;
         for(int i = 0; i<rep; i++){
             if(i == 0) {
