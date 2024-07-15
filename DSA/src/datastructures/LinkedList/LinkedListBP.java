@@ -31,7 +31,7 @@ public class LinkedListBP {
             }
             current = head;
             while(current != null){
-                num +=
+
             }
 
             return num;
