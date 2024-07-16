@@ -1,4 +1,4 @@
-package datastructures.DoublyLinkedList.L1;
+package datastructures.DoublyLinkedList;
 
 public class DLinkedList {
     private Node head;
@@ -13,7 +13,7 @@ public class DLinkedList {
             this.value = value;
         }
     }
-    DLinkedList(int value){
+    public DLinkedList(int value){
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
@@ -83,12 +83,62 @@ public class DLinkedList {
         }
 
     }
-    // WRITE SWAPFIRSTLAST METHOD HERE //
-    //                                 //
-    //                                 //
-    //                                 //
-    //                                 //
-    /////////////////////////////////////
+    public void swap(Node N1, Node N2){
+        Node temp = N1.prev;
+        N1.prev = N1.next;
+        N1.next = N2.next;
+        if(N1.next!=null) {
+            N1.next.prev = N1;
+        }
+        N2.next = N2.prev;
+        N2.prev = temp;
+        if(N2.prev != null) {
+            N2.prev.next = N2;
+        }
+    }
+    public boolean swapPairs(){
+        Node P1S = head;
+        Node P1E = P1S.next;
+        if(length<2){
+            return false;
+        }else if(length == 2){
+            swap(P1S,P1E);
+            head = P1E;
+            return true;
+        }else if(length%2==0){
+
+            //Made to keep the next node ready, for ability to traverse next list
+            swap(P1S,P1E);
+            //makes sure Linked List starts from the end of the second pair
+            head = P1E;
+            //System.out.println(P1S.value + " : Pair 1 Start");
+            //System.out.println(P1E.value + " : Pair 2 Start");
+            //System.out.println();
+            P1S = P1S.next;
+            P1E = P1S.next;
+            // System.out.println(P1S.value + " : Pair 1 Start");
+            //System.out.println(P1E.value + " : Pair 2 Start");
+            swap(P1S,P1E);
+
+            P1S = P1S.next;
+            P1E = P1S.next;
+
+            swap(P1S,P1E);
+
+
+            /*for(int i = 0; i<iterations; i++){
+                temp = P1E.next;
+                swap(P1S,P1E);
+                P1S.next = temp;
+                temp.prev = P1S;
+                P1S = P1S.next;
+                P1E = P1S.next;
+            }*/
+            return true;
+        }else{
+            return true;
+        }
+    }
 
 }
 

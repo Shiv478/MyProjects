@@ -1,5 +1,7 @@
 package datastructures.DoublyLinkedList.L1;
 
+import datastructures.DoublyLinkedList.DLinkedList;
+
 public class Main {
     public static void main(String[] args){
         DLinkedList Dll = new DLinkedList(4);
