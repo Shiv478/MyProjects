@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AddElements/AddElements.iml" filepath="$PROJECT_DIR$/AddElements/AddElements.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DSA/DSA.iml" filepath="$PROJECT_DIR$/DSA/DSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InsertDelete/InsertDelete.iml" filepath="$PROJECT_DIR$/InsertDelete/InsertDelete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaFiles.iml" filepath="$PROJECT_DIR$/.idea/JavaFiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LinkedListPractice/LinkedListPractice.iml" filepath="$PROJECT_DIR$/LinkedListPractice/LinkedListPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LinkedListUnlimitedTimes/LinkedListUnlimitedTimes.iml" filepath="$PROJECT_DIR$/LinkedListUnlimitedTimes/LinkedListUnlimitedTimes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Manhattan Circle/Manhattan Circle.iml" filepath="$PROJECT_DIR$/Manhattan Circle/Manhattan Circle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MixingMilk/MixingMilk.iml" filepath="$PROJECT_DIR$/MixingMilk/MixingMilk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PackageGame/PackageGame.iml" filepath="$PROJECT_DIR$/PackageGame/PackageGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/X_Axis/X_Axis.iml" filepath="$PROJECT_DIR$/X_Axis/X_Axis.iml" />
+    </modules>
+  </component>
+</project>

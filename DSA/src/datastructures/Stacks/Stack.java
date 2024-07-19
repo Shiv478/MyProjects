@@ -22,16 +22,28 @@ public class Stack{
             System.out.println("|   " + current.value +  "   |");
             System.out.println("---------");
             current = current.next;
+
         }
 
     }
-    public void append(int value){
+    public void push(int value){
         Node newTop = new Node(value);
         if(height == 0){
             top = newTop;
         }
         newTop.next = top;
         top = newTop;
+        height++;
+    }
+    public Node pop(){
+        if(height == 0 ) {
+            return null;
+        }
+        Node initTop = top;
+        top = top.next;
+        initTop.next = null;
+        height--;
+        return initTop;
     }
 
     public void getTop(){
