@@ -7,14 +7,14 @@ public class Queue {
     class Node {
         int value;
         Node next;
-        public Node(int value){
+        Node(int value){
             this.value = value;
         }
     }
     public Queue(int value){
         first = new Node(value);
         last = first;
-        length++;
+        length = 1;
     }
     public void printQueue(){
         if(length == 0){
