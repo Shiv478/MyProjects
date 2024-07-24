@@ -20,6 +20,34 @@ public class Main {
         }
         return reversedString;
     }
+    public static Stackk sortStack(Stackk<Integer> ogS){
+        Stackk<Integer> newS = new Stackk<>();
+        while(ogS.isEmpty() == false){
+            if(newS.isEmpty() == true){
+                newS.push(ogS.pop());
+            }else{
+                if(newS.peek() > ogS.peek()){
+                    newS.push(ogS.pop());
+                }else{
+                    Boolean verdict = false;
+                    while(verdict == false){
+                        verdict = newS.isEmpty();
+                        int temp = (int) ogS.pop();
+                        if(temp>newS.peek()){
+                            ogS.push(newS.pop());
+                        }
+                        else{
+                            ogS.push(temp);
+                            verdict = true;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        return newS;
+    }
 
 
 
@@ -28,6 +56,19 @@ public class Main {
         String myString = "hello";
         String reversedString = reverseString(myString);
         System.out.println(reversedString);
+        Stackk ogS = new Stackk();
+        ogS.push(3);
+        ogS.push(4);
+        ogS.push(5);
+        ogS.push(2);
+        ogS.push(6);
+
+        ogS.printStack();
+
+        ogS = sortStack(ogS);
+
+        ogS.printStack();
+
 
         /*
             EXPECTED OUTPUT:
