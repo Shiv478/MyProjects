@@ -22,29 +22,27 @@ public class Main {
     }
     public static Stackk sortStack(Stackk<Integer> ogS){
         Stackk<Integer> newS = new Stackk<>();
+        newS.push(ogS.pop());
         while(ogS.isEmpty() == false){
-            if(newS.isEmpty() == true){
+            if(ogS.peek() < newS.peek()){
                 newS.push(ogS.pop());
             }else{
-                if(newS.peek() > ogS.peek()){
-                    newS.push(ogS.pop());
-                }else{
-                    Boolean verdict = false;
-                    while(verdict == false){
-                        verdict = newS.isEmpty();
-                        int temp = (int) ogS.pop();
-                        if(temp>newS.peek()){
-                            ogS.push(newS.pop());
-                        }
-                        else{
-                            ogS.push(temp);
-                            verdict = true;
-                        }
-                    }
-                }
+              Boolean verdict = true;
+              int ogNum = ogS.pop();
+              while(verdict == true){
+                  if(newS.peek() == null){
+                      newS.push(ogNum);
+                      verdict = false;
+                  }
+                  else if(ogNum>newS.peek()) {
+                      ogS.push(newS.pop());
+                  }
+                  else{
+                      newS.push(ogNum);
+                      verdict = false;
+                  }
+              }
             }
-
-
         }
         return newS;
     }
@@ -53,21 +51,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String myString = "hello";
+        /*String myString = "hello";
         String reversedString = reverseString(myString);
-        System.out.println(reversedString);
+        System.out.println(reversedString);*/
         Stackk ogS = new Stackk();
-        ogS.push(3);
-        ogS.push(4);
-        ogS.push(5);
-        ogS.push(2);
-        ogS.push(6);
+        ogS.push(21);
+        ogS.push(100);
+        ogS.push(250);
+        ogS.push(15);
+        ogS.push(-1);
 
         ogS.printStack();
 
         ogS = sortStack(ogS);
-
+        System.out.println("Sorted Stack");
         ogS.printStack();
+
+
+        //ogS.printStack();
 
 
         /*
