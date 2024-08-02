@@ -47,7 +47,7 @@ public class LinkedList {
         Node ninth = new Node("9");
 
         String prev = null;
-        String current =
+        String current;
 
 
         // Connect nodes
