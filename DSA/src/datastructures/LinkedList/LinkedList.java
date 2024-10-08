@@ -1,5 +1,7 @@
 package datastructures.LinkedList;
 
+import java.util.Stack;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -90,6 +92,41 @@ public class LinkedList {
             return removedNode;
         }
 
+    }
+    public void trial(){
+        Node fast = head;
+        Node slow = head;
+        System.out.println(fast.value + " " + slow.value);
+        while(fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            System.out.println(fast.value + " " + slow.value);
+            if(fast.next == null){
+                break;
+            }
+        }
+    }
+    public boolean isPalindrome(Node head) {
+        Stack<Integer> newStack = new Stack<>();
+        Node slow = head;
+        Node fast = head;
+        newStack.push(slow.value);
+        while(fast.next.next != null){
+            fast = fast.next.next;
+            if(fast.next == null){
+                break;
+            }
+            slow = slow.next;
+            newStack.push(slow.value);
+        }
+        System.out.println(newStack);
+        while(slow.next != null){
+            if(slow.next.value != newStack.pop()){
+                return false;
+            }
+            slow = slow.next;
+        }
+       return true;
     }
 
     public boolean hasLoop() {
