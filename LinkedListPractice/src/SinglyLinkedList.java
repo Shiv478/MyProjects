@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Set;
 
 public class SinglyLinkedList{
     private ListNode head;
@@ -10,44 +11,43 @@ public class SinglyLinkedList{
             this.next = null;
         }
     }
+    public void removeAll(Set<Integer> set){
+        ListNode curr = head;
+        if(set.contains(curr.data)){
+            head = head.next;
+        }
+        while(curr != null){
+            if(set.contains(curr.next.data)){
+                curr.next = curr.next.next;
+            }
+        }
+    }
     public static void main(String[] args){
         SinglyLinkedList s11 = new SinglyLinkedList();
-        s11.head = new ListNode(20);
-        ListNode second  = new ListNode(15);
-        ListNode third = new ListNode(4);
-        ListNode fourth = new ListNode(3);
-
-        s11.head.next = second;
-        second.next = third;
-        third.next = fourth;
-
-        ListNode current = s11.head;
-        while(current!=null){
-            System.out.print(current.data + " ");
-            current = current.next;
+        s11.head = new ListNode(1);
+        s11.head.next = new ListNode(2);
+        s11.head.next.next = new ListNode(3);
+        s11.head.next.next.next = new ListNode(4);
+        s11.head.next.next.next.next = new ListNode(5);
+        s11.head.next.next.next.next.next = new ListNode(6);
+        s11.head.next.next.next.next.next.next = new ListNode(7);
+        s11.head.next.next.next.next.next.next.next = new ListNode(8);
+        ListNode curr = s11.head;
+        if(curr.data == 1){
+            s11.head = curr.next;
         }
-        //System.out.print("null");
-        // head --> 5 --> 10 --> 6 --> 4
-        // 5 <-- 10 <-- 6 <-- 4
-
-        ListNode prev = null;
-        current = s11.head; //5
-        ListNode next = current.next; //10
-        current.next = prev;
-        while(next != null){
-            prev = current;
-            current = next;
-            next = current.next;
-            current.next = prev;
+        while(curr.next != null){
+            if(curr.next.data == 1){
+                curr.next = curr.next.next;
+                System.out.println("Found");
+            }else {
+                curr = curr.next;
+            }
         }
-        //Test
-
-        s11.head = current;
-        current = s11.head;
-        System.out.println("");
-        while(current != null){
-            System.out.print(current.data + " ");
-            current = current.next;
+        curr = s11.head;
+        while(curr != null){
+            System.out.println(curr.data);
+            curr = curr.next;
         }
 
 
